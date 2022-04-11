@@ -1,0 +1,12 @@
+.search-form-wrapper {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 20px 15px;
+    margin-top: 50px;
+    background: url(/resources/images/misc/bg_search-open.png) right center no-repeat #f89d1c;
+}
+.search-form-wrapper.open {
+    display: block;
+}
