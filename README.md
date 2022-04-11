@@ -24,3 +24,8 @@ The main python notebook can be run to invoke the previous three. Upon executing
 
 2. **ML_Models:** We trained the new dataset using XGBoost Classifier. The relevant files can be found under Malacious_URL_Detection_Using_XGBoostClassifier.ipynb
 
+### Visualization
+This directory contains all graphs and visualizations from our rich dataset
+
+
+
