@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Malacious URL Detector!</title>
+    </head>
+    <style type="text/css">
+        html, body {
+            min-height: 400px;
+            min-width: 400px;
+            max-width: 400px;
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            background-color: #4C566A;
+        }
+
+        .box {
+            display: flex;
+            flex-flow: column;
+            height: 100%;
+        }
+
+        .box .row.header {
+            flex: 0 1 auto;
+        }
+
+        .box .row.content {
+            flex: 1 1 auto;
+        }
+
+        .box .row.footer {
+            flex: 0 1 40px;
+        }
+        .header h1 {
+            position: relative;
+            top: 5px;
+            left: 10px;
+        }
+        .header img{
+            float: left;
+            width: 50px;
+            height: 50px;
+            padding: 10px;
+            
+        }
+        .header {
+            display: inline-block;
+            background-color: #2E3440;
+            color: #D8DEE9;
+        }
+
+        #inputBody {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        input[type=text] {
+            width: 80%;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid #3B4252;
+            background-color: #4C566A;
+            color: #D8DEE9;
+            font-size: medium;
+            display: block;
+        }
+
+        input[type=submit] {
+            display: block;
+            margin: 10px;
+            padding: 10px;
+            color: #D8DEE9;
+            background-color: #2E3440;
+            border-radius: 10%;
+            text-shadow: none;
+
+        }
+
+        #result {
+            color: #D8DEE9;
+            word-wrap: break-word;
+            width: 100%;
+            margin: 10px;
+            font-size: medium;
+        }
+        input:focus{
+            outline-width: 0;
+        }
+    </style>
+    <body>
+        <div class="box">
+            <div class="row header">
+                <img src="icon.png" alt="logo">
+                <h1>Data Dive.</h1>
+            </div>
+            <div style="display: flex;justify-content: center;color: #D8DEE9;">
+                <h1>Malicious URL Detector</h1>
+            </div>
+            <div class="row content">
+                <div id="inputBody">
+                    <input type="text" id="url" placeholder="Enter Url" required>
+                    <input type="submit" id="clickIt">
+                    <div style="margin: 10px;">
+                        <p id="result"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer" style="display: flex; justify-content:center;color: #D8DEE9;">
+                <p> &copy; Data Dive</p>
+            </div>
+        </div>
+        
+    </body>
+    <script src="popup.js"></script>
+</html>
