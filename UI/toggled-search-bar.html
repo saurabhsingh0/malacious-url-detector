@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="toggled-search-bar.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$( document ).ready(function() {
+$('[data-toggle=search-form]').click(function() {
+    $('.search-form-wrapper').toggleClass('open');
+    $('.search-form-wrapper .search').focus();
+    $('html').toggleClass('search-form-open');
+  });
+  $('[data-toggle=search-form-close]').click(function() {
+    $('.search-form-wrapper').removeClass('open');
+    $('html').removeClass('search-form-open');
+  });
+$('.search-form-wrapper .search').keypress(function( event ) {
+  if($(this).val() == "Search") $(this).val("");
+});
+
+$('.search-form-wrapper').click(function(event) {
+  $('.search-form-wrapper').removeClass('open');
+  $('html').removeClass('search-form-open');
+});
+});
+</script>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+   <div class="container">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         </button>
+         <h6 class="navbar-brand">Enter Input URL here</h6>
+         <form method="post">
+            <br>
+            <input type="text" name="search" class="search form-control"
+               placeholder="URL"
+               value="{{ request.form['search'] }}"></input>
+            <br>
+            <button type="submit" value="submit" name="submitbtn">Submit</button>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+               {% if messages %}
+                  {% for category, message in messages %}
+                     <div class="alert alert-{{ category }}" role="alert"> {{ message }}</div>
+                  {% endfor %}
+               {% endif %}
+            {% endwith %}
+         </form>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+		 <div class="visible-xs navbar-form navbar-right">
+            <input type="text" name="search" class="search form-control" placeholder="Search">
+         </div>
+         <!--/.navbar-collapse -->
+      </div>
+   </div>
+</nav>
+<!-- <div class="search-form-wrapper">
+   <form class="search-form" id="" action="">
+      <div class="input-group">
+         <input type="text" name="search2" class="search form-control" placeholder="text">
+         <span class="input-group-addon" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i>
+         </span>
+         <span class="input-group-addon" id="basic-addon2"><i class="fa fa-window-close" aria-hidden="true"></i>
+         </span>
+      </div>
+   </form>
+</div> -->
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+   <div class="container">
+      <br><br><br><br><br><br>
+      <h2>Malicious URL Detector</h2>
+      <p>The internet has opened up a world of knowledge and opportunity, it enabled people to reach a global audience providing everyone with unprecedented access to information. However, this also means that the internet has become a hotspot for malicious activity, including cybercrime. <br><br>
+      One of the most common methods criminals use to conduct their online crimes is via malicious URLs, which constitutes about 60% of most cyber-attacks. A malicious URL is a link that is created with the intent of promoting scams and frauds. Clicking on such a link can download a multitude of malware that will compromise your machine or network.</p>
+      <p><a class="btn btn-primary btn-lg" href="https://medium.com/sfu-cspmp/detecting-malicious-urls-2412091872d6" role="button">Read more &raquo;</a></p>
+   </div>
+</div>
+<div class="container">
+   <!-- Example row of columns -->
+   <div class="row">
+      <div class="col-md-4">
+         <h2>Chrome Extension</h2>
+         <p>Is there a way we can prevent you from accessing a malicious website without even visiting it? Add the extension to your browser and find out! </p>
+         <p><a class="btn btn-default" href="#" role="button">Download &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+         <h2>Product Demo</h2>
+         <p>A virtual tour of this product, usage and official documentation.</p>
+         <p><a class="btn btn-default" href="https://prezi.com/view/RAKBiyxYpLT8bP6Y6Mp5/" role="button">View &raquo;</a></p>
+      </div>
+   </div>
+   <hr>
+   <footer>
+      <p>&copy; 2022 DataDive, Inc.</p>
+   </footer>
+</div>
+<!-- /container -->
