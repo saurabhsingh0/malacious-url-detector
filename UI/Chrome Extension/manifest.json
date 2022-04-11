@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "Malacious URL Detector", 
+    "description": "Malacious URL Detector",
+    "version": "1.0",
+    "author": "Data Dive",
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html",
+        "default_title": "Malacious URL Detector"
+    },
+    "permissions": [
+        "activeTab"
+     ]
+}
